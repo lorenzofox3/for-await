@@ -1,0 +1,30 @@
+{
+  "name": "for-await",
+  "version": "0.1.0",
+  "description": "operator and stream utilities for async iterators",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "rollup -c ./rollup/test.js && (node --harmony ./test/debug/node.js | tap-diff)"
+  },
+  "keywords": [
+    "stream",
+    "for-await",
+    "reactive-programming",
+    "iterator",
+    "async-iterator",
+    "generator",
+    "async"
+  ],
+  "author": "Laurent Renard",
+  "license": "MIT",
+  "devDependencies": {
+    "rollup": "^0.55.4",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "tap-diff": "^0.1.1"
+  },
+  "dependencies": {}
+}
