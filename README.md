@@ -4,7 +4,7 @@ Operators and stream semantic for asyncIterators.
 
 ## Motivation
 
-[AsyncIterator]() and [AsyncGenarator]() (and the `for await` statement to consume them`) have been integrated into es2018 specification and have started to land in different Javascript engines:
+[AsyncIterator](https://tc39.github.io/proposal-async-iteration/#sec-asynciterator-interface) and [AsyncGenarator](https://tc39.github.io/proposal-async-iteration/#sec-asyncgenerator-objects) (and the `for await` statement to consume them) have been integrated into es2018 specification and have started to land in different Javascript engines:
 
 1. Nodejs > v9 (with harmony flag)
 2. Chrome
@@ -64,7 +64,7 @@ for await (const v of oddSquaredCounter){
 // > 16 (after 500 ms)
 ```
 
-This could sound familiar to anyone who has already tried [reactive programming]() or have used the same kind of abstractions on streams provided by some nodejs libraries (like [through]()).
+This could sound familiar to anyone who has already tried [reactive programming](https://en.wikipedia.org/wiki/Reactive_programming) or have used the same kind of abstractions on streams provided by some nodejs libraries (like [through](https://www.npmjs.com/package/through2)).
 
 However this implementation relies only on native EcmaScript features which makes it very lightweight and easier to use on different platforms.
 
@@ -75,7 +75,7 @@ You will only have to implement an adapter (I will likely write modules for comm
 ## Operators
 
 ### semantic
-If you are not familiar with the synchronous iterable/iterator protocol, I strongly recommend the [Reginald book]() and [his essays]()
+If you are not familiar with the synchronous iterable/iterator protocol, I strongly recommend the [Reginald Braithwaite book](https://leanpub.com/javascriptallongesix) and [his essays](http://raganwald.com/2017/07/22/closing-iterables-is-a-leaky-abstraction.html)
 
 Note all the operators which do not return a scalar value follow the same semantic than the underlying source:
 1. If source streams are consumable once the resulting iterable is consumable once

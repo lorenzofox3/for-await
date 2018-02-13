@@ -2,11 +2,15 @@
   "name": "for-await",
   "version": "0.1.0",
   "description": "operator and stream utilities for async iterators",
-  "main": "index.js",
+  "main": "index",
+  "engines": {
+    "node": ">=9.3.0"
+  },
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "build": "babel *.mjs lib/*.mjs --out-dir .",
     "test": "node --harmony --experimental-modules ./test/index.mjs | tap-diff"
   },
   "keywords": [
@@ -22,9 +26,10 @@
   "author": "Laurent Renard",
   "license": "MIT",
   "devDependencies": {
-    "rollup": "^0.55.4",
-    "rollup-plugin-commonjs": "^8.3.0",
-    "rollup-plugin-node-resolve": "^3.0.2",
+    "babel-cli": "^6.26.0",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-syntax-async-generators": "^6.13.0",
+    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "tap-diff": "^0.1.1",
     "zora": "^2.0.0-0"
   },
