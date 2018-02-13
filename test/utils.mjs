@@ -1,5 +1,5 @@
 import test from 'zora';
-import {curry} from "../lib/util";
+import {curry} from "../lib/util.mjs";
 
 export default test('utils test suite', t => {
 	t.test('should curry function with two arguments', t => {

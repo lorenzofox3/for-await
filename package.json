@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "rollup -c ./rollup/test.js && (node --harmony ./test/debug/node.js | tap-diff)"
+    "test": "node --harmony --experimental-modules ./test/index.mjs | tap-diff"
   },
   "keywords": [
     "stream",
@@ -15,6 +15,7 @@
     "reactive-programming",
     "iterator",
     "async-iterator",
+    "asyncIterator",
     "generator",
     "async"
   ],

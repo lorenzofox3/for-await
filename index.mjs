@@ -38,11 +38,9 @@ const skip = (number = 0) => async function * (asyncIterable) {
 };
 
 const flatMap = fn => async function * (asyncIterable) {
-	for await (const i of asyncIterable) {
+	for (const i of asyncIterable) {
 		if (i[Symbol.asyncIterator]) {
-			for await (const j of i) {
-				yield j;
-			}
+			yield * i;
 		} else {
 			yield i;
 		}
@@ -50,11 +48,9 @@ const flatMap = fn => async function * (asyncIterable) {
 };
 
 const concat = async function * (...values) {
-	for await (const i of from(values)) {
-		if (i[Symbol.asyncIterator]) {
-			for await (const j of i) {
-				yield j;
-			}
+	for (const i of values) {
+		if (i[Symbol.asyncIterator] !== void 0) {
+			yield * i;
 		} else {
 			yield i;
 		}
@@ -150,7 +146,7 @@ const stream = iterable => {
 	}
 };
 
-const after = (time = 100) => value => new Promise(resolve => {
+const after = (time = 200) => value => new Promise(resolve => {
 	setTimeout(() => {resolve(value)}, time);
 });
 const after100 = after();
@@ -237,24 +233,23 @@ const fromStream = async function * (stream) {
 const csvStream = () => fromStream(require('fs').createReadStream('./fixture.csv', {encoding: 'utf8'}));
 
 (async function () {
-
 	const toAsync = iterable => ({
 		[Symbol.asyncIterator]: async function * () {
-			for await (const i of iterable) {
-				yield i;
-			}
+			yield *iterable;
 		}
 	});
 
-	const str = toAsync([0, 1, 2, 3]);
 
-	for await (const i of str) {
-		console.log(i);
-	}
+	const str = toAsync([0, 1, 2, 3, 4, 5]);
+	//
+	const strBis = asyncCounter();
+	//
 
-	for await (const i of str) {
-		console.log(i);
-	}
+
+	// for await (const i of strBis){
+	// 	console.log(i);
+	// }
+
 
 	// const square = map(x => x * x);
 	//
