@@ -25,7 +25,8 @@
     "rollup": "^0.55.4",
     "rollup-plugin-commonjs": "^8.3.0",
     "rollup-plugin-node-resolve": "^3.0.2",
-    "tap-diff": "^0.1.1"
+    "tap-diff": "^0.1.1",
+    "zora": "^2.0.0-0"
   },
   "dependencies": {}
 }
