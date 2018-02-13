@@ -1,5 +1,5 @@
 {
-  "name": "far-away",
+  "name": "@lorenzofox3/for-await",
   "version": "0.1.0",
   "description": "operator and stream utilities for async iterators",
   "main": "index",
