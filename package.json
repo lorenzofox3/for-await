@@ -11,7 +11,10 @@
   },
   "scripts": {
     "build": "babel *.mjs lib/*.mjs --out-dir .",
-    "test": "node --harmony --experimental-modules ./test/index.mjs | tap-diff"
+    "test": "node --harmony --experimental-modules ./test/index.mjs | tap-diff",
+    "test:ci": "node --harmony --experimental-modules ./test/index.mjs | tap-set-exit",
+    "example:node": "node --harmony --experimental-modules ./examples/node.mjs",
+    "example:browser": "http-serve"
   },
   "keywords": [
     "stream",
@@ -32,8 +35,8 @@
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
     "http-serve": "^1.0.1",
     "tap-diff": "^0.1.1",
-    "zora": "^2.0.0-0"
+    "tap-set-exit": "^1.1.1",
+    "zora": "^2.0.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }

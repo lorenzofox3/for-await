@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/lorenzofox3/for-await.svg?style=svg)](https://circleci.com/gh/lorenzofox3/for-await)
+
 # for-await
 
 Operators and stream semantic for asyncIterators.
@@ -70,7 +72,7 @@ However this implementation relies only on native EcmaScript features which make
 
 You will only have to implement an adapter (I will likely write modules for common data source in Nodejs and in the Browser) so your data source implements the standard asyncIterator interface (and this has become way more easier with async generators).
 
-[See our csv parser for nodejs and browser]().
+[See our csv parser for nodejs and browser]('./examples').
 
 ## Operators
 
@@ -199,8 +201,8 @@ for await (const i of square(counter()){
 #### Return a scalar (as a promise)
 1. reduce
 2. find
-3. findIndex (with predicate argument)
-4. includes (with predicate argument)
+3. findIndex
+4. includes
 5. every
 6. some
 
@@ -209,7 +211,3 @@ for await (const i of square(counter()){
 Even more convenient you can use the stream data structure which gives you almost the same API than Arrays.
 1. An instance of a stream will implement all the operators above
 2. Every method which returns an async Iterable will actually return a new instance of stream (so you can chain them together)
-
-## Example A Basic CSV parser.
-
-

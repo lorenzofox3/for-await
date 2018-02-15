@@ -7,19 +7,14 @@
 <body>
 <script type="module">
 	import fromFetch from './browser/fromFetch.js';
-	import csv from './csv-parser.mjs';
-	import {stream} from '../index.mjs';
-
+	import {parser} from './csv-parser.mjs';
 	//program
 	(async function () {
-		const source = fromFetch('./fixture.csv');
-		const csvData = await csv(source);
+		const csvData = await parser(fromFetch('./fixture.csv'));
 
-		const sum = await stream(csvData)
-			.reduce((acc, curr) => acc + curr.foo, 0);
-
-		console.log(sum);
-
+		for await (const line of csvData){
+			console.log(line);
+    }
 	})();
 </script>
 
