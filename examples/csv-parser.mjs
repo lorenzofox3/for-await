@@ -1,13 +1,10 @@
 import {stream} from '../index.mjs';
-import toAsync from './node-adapter.mjs';
-import fs from 'fs';
 
-
-// take chunks of file stream and yield lines.
-const lines = file => ({
+// take chunks stream (whether they come from file or network) and yield lines.
+const lines = chunkStream => ({
 	[Symbol.asyncIterator]: async function * () {
-		let remaining = '';
-		for await (const chunk of toAsync(fs.createReadStream(file, {encoding: 'utf8', highWaterMark: 7}))) {
+		let remaining = ''; // chunk may ends in the middle of a line
+		for await (const chunk of chunkStream) {
 			const chunkLines = (remaining + chunk).split('\n');
 			remaining = chunkLines.pop();
 			yield * chunkLines;
@@ -16,18 +13,15 @@ const lines = file => ({
 	}
 });
 
-
-//program
-(async function () {
-
-	const iterable = stream(lines('./examples/fixture.csv'))
+export default async function csvParser(source) {
+	const iterable = stream(lines(source))
 		.map(l => l.split(','));
 
 	const headers = await iterable
 		.slice(0, 1)
 		.reduce(acc => acc);
 
-	const body = iterable
+	return iterable
 		.slice(1)
 		.map(line => {
 			const item = {};
@@ -36,9 +30,6 @@ const lines = file => ({
 			});
 			return item;
 		});
+};
 
-	for await (const line of body) {
-		console.log(line);
-	}
 
-})();

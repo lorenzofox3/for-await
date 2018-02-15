@@ -30,8 +30,10 @@
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-syntax-async-generators": "^6.13.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
+    "http-serve": "^1.0.1",
     "tap-diff": "^0.1.1",
     "zora": "^2.0.0-0"
   },
-  "dependencies": {}
+  "dependencies": {
+  }
 }
