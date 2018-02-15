@@ -4,6 +4,8 @@
 
 Operators and stream semantic for asyncIterators.
 
+``npm install @lorenzofox3/for-await``
+
 ## Motivation
 
 [AsyncIterator](https://tc39.github.io/proposal-async-iteration/#sec-asynciterator-interface) and [AsyncGenarator](https://tc39.github.io/proposal-async-iteration/#sec-asyncgenerator-objects) (and the `for await` statement to consume them) have been integrated into es2018 specification and have started to land in different Javascript engines:
