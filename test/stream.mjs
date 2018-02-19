@@ -1,7 +1,6 @@
 import test from 'zora';
 import {toAsync, proto, stream} from "../lib/stream.mjs";
-import {counterGen, counterIterator, breakableCounter} from "./util/source.mjs";
-import {flatMap} from "../lib/operators.mjs";
+import {counterGen, counterIterator} from "./util/source.mjs";
 
 export default test('stream test suite', t => {
 	t.test('from array', async t => {
@@ -249,6 +248,4 @@ export default test('stream test suite', t => {
 		const hasNot = await stream(counterGen()).some(i => i > 4);
 		t.equal(hasNot, false, 'none item is greater than 4');
 	});
-
-
 });

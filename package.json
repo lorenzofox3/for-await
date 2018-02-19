@@ -29,6 +29,7 @@
   "author": "Laurent Renard",
   "license": "MIT",
   "devDependencies": {
+    "@lorenzofox3/for-await-node": "^0.2.0",
     "babel-cli": "^6.26.0",
     "babel-plugin-dynamic-import-node": "^1.2.0",
     "babel-plugin-syntax-async-generators": "^6.13.0",
