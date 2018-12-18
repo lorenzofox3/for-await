@@ -1,21 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
 <script type="module">
-	import fromFetch from './browser/fromFetch.js';
-	import {parser} from './csv-parser.mjs';
-	//program
-	(async function () {
-		const csvData = await parser(fromFetch('./fixture.csv'));
+    import fromFetch from './browser/fromFetch.js';
+    import {parser} from './csv-parser.js';
+    //program
+    (async function () {
+        const csvData = await parser(fromFetch('./fixture.csv'));
+        let val = 0;
 
-		for await (const line of csvData){
-			console.log(line);
-    }
-	})();
+        for await (const line of csvData) {
+            val+=Number(line.bim);
+            // console.log(line);
+        }
+        console.log(val);
+    })();
 </script>
 
 </body>

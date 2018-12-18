@@ -10,7 +10,7 @@ Operators and stream semantic for asyncIterators.
 
 [AsyncIterator](https://tc39.github.io/proposal-async-iteration/#sec-asynciterator-interface) and [AsyncGenarator](https://tc39.github.io/proposal-async-iteration/#sec-asyncgenerator-objects) (and the `for await` statement to consume them) have been integrated into es2018 specification and have started to land in different Javascript engines:
 
-1. Nodejs > v9 (with harmony flag)
+1. Nodejs > v9 (with harmony flag for some versions)
 2. Chrome
 3. Firefox
 

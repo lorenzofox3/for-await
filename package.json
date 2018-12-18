@@ -1,21 +1,28 @@
 {
   "name": "@lorenzofox3/for-await",
-  "version": "0.1.0",
-  "description": "operator and stream utilities for async iterators",
-  "main": "index",
+  "version": "0.2.0",
+  "description": "operators and stream utilities for async iterators",
   "engines": {
     "node": ">=9.3.0"
   },
   "directories": {
     "test": "test"
   },
+  "main": "./dist/bundle/index",
+  "module": "./dist/bundle/module.js",
+  "types": "./dist/bundle/index.d.ts",
   "scripts": {
-    "build": "babel *.mjs lib/*.mjs --out-dir .",
-    "test": "node --harmony --experimental-modules ./test/index.mjs | tap-diff",
-    "test:ci": "node --harmony --experimental-modules ./test/index.mjs | tap-set-exit",
-    "example:node": "node --harmony --experimental-modules ./examples/node.mjs",
-    "example:browser": "http-serve"
+    "build:clean": "rm -rf ./dist && mkdir -p ./dist/bundle ./dist/declarations",
+    "build:bundle": "rollup -c ./rollup/build.js && cp ./src/index.d.ts ./dist/declarations/",
+    "build": "npm run build:clean && npm run build:bundle",
+    "test": "rollup -c ./rollup/test.js --output.format cjs | node",
+    "test:ci": "rollup -c ./rollup/test.js --output.format cjs | node | tap-diff",
+    "example:node": "rollup -c ./examples/scripts/rollup.node.js | node"
   },
+  "files": [
+    "dist/bundle",
+    "dist/declarations"
+  ],
   "keywords": [
     "stream",
     "for-await",
@@ -29,15 +36,11 @@
   "author": "Laurent Renard",
   "license": "MIT",
   "devDependencies": {
-    "@lorenzofox3/for-await-node": "^0.2.0",
-    "babel-cli": "^6.26.0",
-    "babel-plugin-dynamic-import-node": "^1.2.0",
-    "babel-plugin-syntax-async-generators": "^6.13.0",
-    "babel-plugin-transform-es2015-modules-commonjs": "^6.26.0",
-    "http-serve": "^1.0.1",
+    "rollup": "^0.67.4",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^3.4.0",
     "tap-diff": "^0.1.1",
-    "tap-set-exit": "^1.1.1",
-    "zora": "^2.0.0"
+    "zora": "^2.0.1"
   },
   "dependencies": {}
 }
