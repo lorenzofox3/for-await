@@ -36,9 +36,9 @@
   "author": "Laurent Renard",
   "license": "MIT",
   "devDependencies": {
-    "rollup": "^0.67.4",
+    "rollup": "^1.1.2",
     "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^3.4.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
     "tap-diff": "^0.1.1",
     "zora": "^2.0.1"
   },
