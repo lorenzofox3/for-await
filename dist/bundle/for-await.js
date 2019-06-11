@@ -252,21 +252,21 @@ var ForAwait = (function (exports) {
         return Object.create(proto, {_source: {value: source}});
     };
 
-    exports.stream = stream;
-    exports.from = toAsync;
-    exports.map = map;
-    exports.filter = filter;
-    exports.take = take;
-    exports.skip = skip;
-    exports.flatMap = flatMap;
-    exports.slice = slice;
     exports.concat = concat;
-    exports.reduce = reduce;
+    exports.every = every;
+    exports.filter = filter;
     exports.find = find;
     exports.findIndex = findIndex;
+    exports.flatMap = flatMap;
+    exports.from = toAsync;
     exports.includes = includes;
-    exports.every = every;
+    exports.map = map;
+    exports.reduce = reduce;
+    exports.skip = skip;
+    exports.slice = slice;
     exports.some = some;
+    exports.stream = stream;
+    exports.take = take;
 
     return exports;
 

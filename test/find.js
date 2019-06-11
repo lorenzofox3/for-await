@@ -1,4 +1,4 @@
-import test from 'zora';
+import {test} from 'zora';
 import {find, findIndex} from '../src/lib/operators';
 import {counterGenerator} from './util/source.js';
 

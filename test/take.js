@@ -1,6 +1,6 @@
-import test from 'zora';
+import {test} from 'zora';
 import {take} from '../src/lib/operators';
-import {counterIterable, breakableCounter, counterGenerator} from './util/source';
+import {breakableCounter, counterGenerator, counterIterable} from './util/source';
 
 export default test('take operator', t => {
 

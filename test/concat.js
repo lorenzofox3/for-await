@@ -1,4 +1,4 @@
-import test from 'zora';
+import {test} from 'zora';
 import {concat} from '../src/lib/operators';
 import {breakableCounter, counterGenerator} from './util/source.js';
 

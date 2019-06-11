@@ -1,6 +1,6 @@
-import test from 'zora';
+import {test} from 'zora';
 import {filter} from '../src/lib/operators';
-import {counterIterable, breakableCounter, counterGenerator} from './util/source.js';
+import {breakableCounter, counterGenerator, counterIterable} from './util/source.js';
 
 export default test('filter operator test suite', t => {
 

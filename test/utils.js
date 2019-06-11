@@ -1,4 +1,4 @@
-import test from 'zora';
+import {test} from 'zora';
 import {curry} from '../src/lib/util';
 
 export default test('utils test suite', t => {

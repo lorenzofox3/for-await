@@ -1,5 +1,5 @@
 import {reduce} from '../src/lib/operators';
-import test from 'zora';
+import {test} from 'zora';
 import {counterGenerator} from './util/source.js';
 
 export default test('test suite for reduce', t => {

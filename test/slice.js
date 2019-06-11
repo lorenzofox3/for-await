@@ -1,6 +1,6 @@
-import test from 'zora';
+import {test} from 'zora';
 import {slice} from '../src/lib/operators';
-import {counterIterable, breakableCounter, counterGenerator} from './util/source.js';
+import {breakableCounter, counterGenerator, counterIterable} from './util/source.js';
 
 export default test('slice operator test suite', t => {
 

@@ -1,4 +1,4 @@
-import test from 'zora';
+import {test} from 'zora';
 import {map} from '../src/lib/operators';
 import {counterIterable, breakableCounter, counterGenerator} from './util/source.js';
 

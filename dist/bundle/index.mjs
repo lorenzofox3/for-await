@@ -249,4 +249,4 @@ const stream = iterable => {
     return Object.create(proto, {_source: {value: source}});
 };
 
-export { stream, toAsync as from, map, filter, take, skip, flatMap, slice, concat, reduce, find, findIndex, includes, every, some };
+export { concat, every, filter, find, findIndex, flatMap, toAsync as from, includes, map, reduce, skip, slice, some, stream, take };

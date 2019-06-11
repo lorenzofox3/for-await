@@ -1,5 +1,5 @@
-import test from 'zora';
-import {toAsync, proto, stream} from '../src/lib/stream';
+import {test} from 'zora';
+import {proto, stream, toAsync} from '../src/lib/stream';
 import {counterGenerator, counterIterable} from './util/source.js';
 
 export default test('stream test suite', t => {
