@@ -1,7 +1,7 @@
 /// <reference lib="esnext" />
 
 interface MapCallback<T, U> {
-    (item: T, index: number, iterable: AsyncIterable<T>): AsyncIterable<U>;
+    (item: T, index: number, iterable: AsyncIterable<T>): U | Promise<U>;
 }
 
 declare function map<T, U>(callback: MapCallback<T, U>): (iterable: AsyncIterable<T>) => AsyncIterable<U>;
