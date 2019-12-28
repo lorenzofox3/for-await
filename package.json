@@ -1,6 +1,6 @@
 {
   "name": "@lorenzofox3/for-await",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "operators and stream utilities for async iterators",
   "engines": {
     "node": ">=9.3.0"
