@@ -8,6 +8,10 @@
   "directories": {
     "test": "test"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lorenzofox3/for-await.git"
+  },
   "main": "./dist/bundle/index",
   "module": "./dist/bundle/module.js",
   "types": "./dist/bundle/index.d.ts",
